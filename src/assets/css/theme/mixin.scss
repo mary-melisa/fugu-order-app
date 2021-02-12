@@ -1,0 +1,241 @@
+@mixin flex {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+}
+@mixin rounded-corners($border-radius:50%) {
+    -moz-border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+    border-radius: $border-radius;
+}
+@mixin rounded-corners1($border-radius:50%, $border-radius1:50%, $border-radius2: 50%, $border-radius3: 50%) {
+    -moz-border-radius: $border-radius $border-radius1 $border-radius2 $border-radius3;
+    -webkit-border-radius: $border-radius $border-radius1 $border-radius2 $border-radius3;
+    border-radius: $border-radius $border-radius1 $border-radius2 $border-radius3;
+}
+@mixin linearGradient($point, $start, $stop) {
+    background-color: $stop;
+    background: linear-gradient($point, $start, $stop);
+    background: -moz-linear-gradient($point, $start, $stop);
+    background: -webkit-linear-gradient($point, $start, $stop);
+}
+
+@mixin boxShadow($defaultColor, $color, $xPx, $yPx, $size) {
+    background-color: $defaultColor; 
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=135, Strength=5);/*for ie6,7,8*/ 
+    -moz-box-shadow: $xPx $yPx $size $color inset;/*firefox*/ 
+    -webkit-box-shadow:$xPx $yPx $size $color inset;/*webkit*/ 
+    box-shadow:$xPx $yPx $size $color inset;/*opera或ie9*/ 
+}
+
+@mixin transition() {
+    transition: display .2s;
+    -moz-transition: display .2s; /* Firefox 4 */
+    -webkit-transition: display .2s; /* Safari 和 Chrome */
+    -o-transition: display .2s; /* Opera */
+}
+
+@mixin ellipse {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+// 设置高和行高
+@mixin line-height($h, $lineH) {
+    height: $h;
+    line-height: $lineH;
+}
+
+//  设置position,如遇到不用设置bottom,则传入 auto
+//  eg: postion(fixed, 0, 0, auto, 0)
+@mixin  position($localtion, $top, $right, $bottom, $left) {
+    position: $localtion;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin transform2D($deg) {
+    transform:rotate($deg);
+    -ms-transform:rotate($deg); /* IE 9 */
+    -webkit-transform:rotate($deg); /* Safari and Chrome */
+}
+
+// 文字渐变
+.gradient-text{  
+    background-image:-webkit-linear-gradient(bottom, $deepred, $red); 
+    -webkit-background-clip:text; 
+    -webkit-text-fill-color:transparent; 
+}
+// .gradient-text{
+//     color:red;
+//  }
+//  .gradient-text[data-content]::after{
+//      content:attr(data-content);
+//      display: block;
+//      position:absolute;
+//      color:yellow;
+//      left:0;
+//      top:0;
+//      z-index:2;
+//      -webkit-mask-image:-webkit-gradient(linear, 0 0, 0 bottom, from(yellow), to(rgba(0, 0, 255, 0)));
+//  }
+// 两端对齐
+.justifys {
+    display: inline-block;
+    text-align: justify;
+    text-align-last: justify;
+    -moz-text-align-last: justify ;  //兼容firefox
+    text-justify: distribute-all-lines;  //兼容ie
+    vertical-align: top;
+    &::after {
+        display: inline-block;
+        width: 100%;
+        content: '';
+        height: 0;
+    }
+}
+// 默认文本框placeholder颜色
+.van-field__control::-webkit-input-placeholder { /* WebKit browsers */
+    color: $placeholder;
+}
+.van-field__control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $placeholder;
+}
+.van-field__control::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $placeholder;
+}
+.van-field__control:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $placeholder;
+}
+// 重写vant默认样式
+.van-cell:not(:last-child)::after {
+    border-bottom: 0;
+}
+.van-hairline--top-bottom::after {
+    border-width: 0;
+}
+[class*=van-hairline]::after {
+   border: 0;
+}
+.van-switch {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.van-switch__node {
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+.van-step--finish .van-step__circle, .van-step--finish .van-step__line {
+    background: $border;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right !important;
+}
+
+.none {
+    display: none;
+}
+
+.yellow {
+    color: $yellow !important;
+}
+
+.red {
+    color: $red !important;
+}
+
+.green {
+    color: $green !important;
+}
+
+.black {
+    color: $black !important;
+}
+.blue {
+    color: $blue !important;
+}
+.white {
+    color: $white !important;
+}
+
+.deepGrey {
+    color: $deepGrey !important;
+}
+
+.pl20 {
+    padding-left: 20px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml100 {
+    margin-left: 100px;
+}
+
+.ml18 {
+    margin-left: 18px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.ml24 {
+    margin-left: 24px;
+}
+.mr24 {
+    margin-right: 24px !important;
+}
+.ml30 {
+    margin-left: 30px;
+}
+
+.ml40 {
+    margin-left: 40px;
+}
+
+.ml2 {
+    margin-left: 2px;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.mr10 {
+    margin-right: 10px !important;
+}
+
+.tc {
+    text-align: center !important;
+}
+
+.tl {
+    text-align: left !important;
+}
+.tr {
+    text-align: right !important;
+}
+
+.font28 {
+    font-size: 28px !important;
+}
+.nowrap {
+    white-space: nowrap;
+}
+em {
+    font-style: normal;
+}

@@ -1,0 +1,36 @@
+.header-filter {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    @include line-height(70px, 70px);
+    padding: 0 24px;
+    background-color: $white;
+    font-size: 22px;
+    color: $black;
+    z-index: 99;
+    text-align: left;
+    border-bottom: 1px solid $bordergrey;
+    .header-filter_s {
+        position: relative;
+        &:first-child {
+            margin-right: 70px;
+        }
+        .iconfont {
+            font-size: 34px;
+            @include position(absolute, -18px, auto, auto, 85px);
+        }
+        
+    }
+}
+// 解决父级有transform导致fixed失效的bug
+.filter-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // /deep/ .van-overlay {
+    //     position: absolute;
+    // }
+    // /deep/.van-popup--bottom {
+    //     position: absolute;
+    // }
+}

@@ -1,0 +1,113 @@
+.card-container {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.card-head-des {
+    padding-left: 24px;
+    margin-top: 20px;
+    font-size: 22px;
+    color: $deepGrey;
+    width: 100%;
+    text-align: left;
+}
+// .card-head-des:first-child {
+//     margin-top: 30px;
+// }
+.card-p-line {
+    @include line-height(50px, 50px);
+    text-align: left;
+    width: 246px;
+    span:first-child {
+        margin-right: 20px;
+        display: inline-block;
+        width: 90px;
+        font-size: 22px;
+    }
+    .card-spe-name {
+        width: 180px !important;
+    }
+}
+.card-p-line_s {
+    width: 100%;
+}
+.van-button {
+    margin-left: 20px;
+    padding: 0 10px;
+    width: 106px;
+    height: 56px;
+    font-size: 24px;
+    color: $deepGrey;
+    @include rounded-corners(5px);
+    border-color: $bordergrey;
+}
+.btn-blue {
+    color: $blue;
+    border-color: $blue;
+}
+.btn-red {
+    color: $red;
+    border-color: $red;
+}
+.card-span-inl {
+    display: inline-block;
+    width: 60px!important;
+    @include line-height(30px, 30px);
+    @include rounded-corners(3px);
+    text-align: center;
+    font-size: 20px;
+}
+.card-buy {
+    @extend .card-span-inl;
+    color: $red;
+    background: $redbg;
+}
+.card-pay {
+    @extend .card-span-inl;
+    color: $green;
+    background-color: $greenbg;
+}
+.card-order-num {
+    margin-bottom: 15px;
+}
+
+.footer-table {
+    margin-top: 20px;
+    .tab-content {
+        padding: 5px 22px;
+        border: 1px solid $holderbg;
+    }
+    .van-row--flex {
+        height: 77px;
+        line-height: 77px;
+        font-size: 20px;
+        color: $deepGrey;
+    }
+    .van-row-header {
+        font-size: 22px;
+        height: 50px;
+        line-height: 50px;
+        background-color: $darkgrey;
+        border-top: 1px solid $blue;
+    }
+    .van-row-tbody {
+        height: 60px;
+        line-height: 40px;
+    }
+    .van-row-tbody-size {
+        font-size: 24px;
+        color: $black;
+    }
+}
+.footer-i {
+    height: 26px;
+    line-height: 26px;
+    padding-top: 5px;
+    text-align: center;
+    i {
+        font-size: 22px;
+        color: $deepGrey;
+    }
+}
+.card-footer_s {
+    @include line-height(50px, 50px);
+}
